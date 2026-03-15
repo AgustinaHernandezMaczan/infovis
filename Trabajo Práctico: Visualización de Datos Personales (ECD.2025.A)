@@ -46,16 +46,15 @@
         .subtitle {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             color: #555;
         }
 
         .author {
             margin-top: 20px;
-            font-weight: 600;
-            text-transform: uppercase;
+            font-weight: 400;
             letter-spacing: 2px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--accent-color);
         }
 
@@ -114,12 +113,12 @@
 <div class="container">
     <header>
         <h1>Radiografía de mis hábitos de lectura</h1>
-        <p class="subtitle">Análisis visual de mis datos personales en el tiempo</p>
-        <p class="author">Por: Agustina Hernandez Maczan · ECD 2025</p>
+        <p class="subtitle">Análisis visual de mis lecturas a lo largo de los últimos años</p>
+        <p class="author">Agustina Hernandez Maczan · ECD 2025</p>
     </header>
 
     <section>
-        <h2>01. RAW Graphs</h2>
+        <h2>¿Cuáles son los géneros que más leo?</h2>
         <p class="chart-description">
             Exploración inicial de la estructura de mis datos. Esta visualización permite entender la jerarquía y el flujo de géneros literarios consumidos.
         </p>
@@ -129,23 +128,22 @@
     </section>
 
     <section>
-        <h2>02. Flourish FN</h2>
+        <h2>¿Qué cantidad de páginas leí por trimestre a través de los años?</h2>
         <p class="chart-description">
             Visualización interactiva centrada en la evolución temporal de las páginas leídas y la frecuencia mensual.
         </p>
         <div class="visual-container">
-            <p style="color:#ccc">Pega aquí el código de Flourish</p>
+            <p style="color:#ccc"><div class="flourish-embed flourish-chart" data-src="visualisation/28065791"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/28065791/thumbnail" width="100%" alt="visualization" /></noscript></div></p>
         </div>
     </section>
 
     <section>
-        <h2>03. Datawrapper</h2>
+        <h2>¿Cómo se comparan mis valoraciones contra el promedio de los lectores?</h2>
         <p class="chart-description">
-            Comparativa detallada entre mi valoración personal de cada libro frente al promedio de los usuarios en plataformas de lectura.
+            Comparativa detallada entre mi valoración personal de cada libro frente al promedio de los usuarios en Goodreads.
         </p>
         <div class="visual-container" style="display: block;">
-            <iframe title="Diferencias entre el puntaje promedio y el propio" aria-label="Range Plot" id="datawrapper-chart-Keahc" src="https://datawrapper.dwcdn.net/Keahc/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="600" data-external="1"></iframe>
-            <script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+          <iframe title="Diferencias entre el puntaje  promedio y el  propio" aria-label="Range Plot" id="datawrapper-chart-Keahc" src="https://datawrapper.dwcdn.net/Keahc/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1445" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>            <script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
         </div>
     </section>
 
