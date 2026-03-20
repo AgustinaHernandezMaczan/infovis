@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Radiografía de mis hábitos de lectura - Agustina Hernandez Maczan</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #f4f1ea; /* Color crema tipo papel */
+            --card-bg: #ffffff;
+            --primary-text: #2c3e50;
+            --accent-color: #8e44ad; /* Un toque púrpura literario */
+            --border-color: #dcd7cc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--primary-text);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            color: #555;
+        }
+
+        .author {
+            margin-top: 20px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+        }
+
+        section {
+            background: var(--card-bg);
+            padding: 40px;
+            margin-bottom: 50px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .chart-description {
+            margin-bottom: 30px;
+            color: #666;
+            max-width: 700px;
+        }
+
+        .visual-container {
+            width: 100%;
+            min-height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fafafa;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #999;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Ajuste para que los iframes de Datawrapper y otros sean fluidos */
+        iframe {
+            width: 100% !important;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Radiografía de mis hábitos de lectura</h1>
+        <p class="subtitle">Análisis visual de mis lecturas a lo largo de los últimos años</p>
+        <p class="author">Agustina Hernandez Maczan</p>
+    </header>
+
+    <section>
+        <h2>¿Cuáles son los géneros que más leo?</h2>
+        <p class="chart-description">
+            Exploración inicial de la estructura de mis datos. Esta visualización permite entender la jerarquía y el flujo de géneros literarios consumidos.
+        </p>
+        <div class="visual-container">
+            <p style="color:#ccc">Pega aquí el código exportado de RAW Graphs</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>¿Qué cantidad de páginas he leido por trimestre a través de los años?</h2>
+        <p class="chart-description">
+            Visualización interactiva centrada en la evolución temporal de las páginas leídas por categoría.
+        </p>
+        <div class="visual-container">
+            <div class="flourish-embed flourish-chart" data-src="visualisation/28065791"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/28065791/thumbnail" width="100%" alt="visualization" /></noscript></div>        </div>
+    </section>
+
+    <section>
+        <h2>¿Cómo se comparan mis valoraciones contra el promedio de los lectores?</h2>
+        <p class="chart-description">
+            Comparativa detallada entre mi valoración personal de cada libro frente al promedio de los usuarios en Goodreads.
+        </p>
+        <div class="visual-container" style="display: block;">
+          <iframe title="Diferencias entre el puntaje  promedio y el  propio" aria-label="Range Plot" id="datawrapper-chart-Keahc" src="https://datawrapper.dwcdn.net/Keahc/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1445" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>            <script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+        </div>
+    </section>
+
+    <section>
+        <h2>04. Tableau</h2>
+        <p class="chart-description">
+            Dashboard integral que consolida todos los insights recolectados en la radiografía de hábitos.
+        </p>
+        <div class="visual-container">
+            <p style="color:#ccc">Pega aquí el código de Tableau Public</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Trabajo Práctico: Visualización de Datos Personales (ECD.2025.A)</p>
+        <p>Instituto Tecnológico de Buenos Aires (ITBA)</p>
+    </footer>
+</div>
+
+</body>
+</html>
