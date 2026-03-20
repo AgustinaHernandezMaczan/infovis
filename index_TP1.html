@@ -1,171 +1,22 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Radiografía de mis hábitos de lectura - Agustina Hernandez Maczan</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-color: #f4f1ea; 
-            --card-bg: #ffffff;
-            --primary-text: #2c3e50;
-            --accent-color: #8e44ad;
-            --border-color: #dcd7cc;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--primary-text);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 10px;
-            color: #1a1a1a;
-        }
-
-        .subtitle {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            font-size: 1.4rem;
-            color: #555;
-            margin-top: 0;
-        }
-
-        .author {
-            margin-top: 20px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            font-size: 0.85rem;
-            color: var(--accent-color);
-            text-transform: uppercase;
-        }
-
-        section {
-            background: var(--card-bg);
-            padding: 40px;
-            margin-bottom: 50px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border: 1px solid var(--border-color);
-        }
-
-        h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-top: 0;
-            border-bottom: 2px solid var(--bg-color);
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-        }
-
-        .chart-description {
-            margin-bottom: 30px;
-            color: #666;
-            font-size: 1rem;
-        }
-
-        .visual-container {
-            width: 100%;
-            min-height: 450px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #fafafa;
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        /* Forzar que los SVGs y objetos ocupen el ancho total */
-        .visual-container object, 
-        .visual-container iframe {
-            width: 100%;
-            height: auto;
-            min-height: 450px;
-            border: none;
-        }
-
-        footer {
-            text-align: center;
-            padding: 60px 20px;
-            font-size: 0.85rem;
-            color: #777;
-            background: #ebe7de;
-            margin-top: 40px;
-        }
-
-        footer p { margin: 5px 0; }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>INFOVIS - Agustina Hernandez Maczan</title>
 </head>
 <body>
+<h1>RAW Graphs </h1>
+  <object data="./horizon_chart.svg" type="image/svg+xml"></object>
 
-<div class="container">
-    <header>
-        <h1>Radiografía de mis hábitos de lectura</h1>
-        <p class="subtitle">Análisis visual de mis lecturas a lo largo de los últimos años</p>
-        <p class="author">Agustina Hernandez Maczan</p>
-    </header>
+<h1>Flourish FN</h1>
 
-    <section>
-        <h2>¿Cuáles son los géneros que más leo?</h2>
-        <p class="chart-description">
-            Exploración inicial de la estructura de mis datos. Esta visualización permite entender la jerarquía y el flujo de géneros literarios consumidos.
-        </p>
-        <div class="visual-container">
-            <object data="categoria_genero_subgenero.svg" type="image/svg+xml"></object>
-        </div>
-    </section>
+<h1>Datawrapper</h1>
+<iframe title="Prefered topping on a pizza" aria-label="Range Plot" id="datawrapper-chart-wYV7b" src="https://datawrapper.dwcdn.net/wYV7b/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="458" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
 
-    <section>
-        <h2>Evolución de páginas por trimestre</h2>
-        <p class="chart-description">
-            Visualización interactiva centrada en la evolución temporal de las páginas leídas por categoría.
-        </p>
-        <div class="visual-container">
-            <div class="flourish-embed flourish-chart" data-src="visualisation/28065791" style="width:100%">
-                <script src="https://public.flourish.studio/resources/embed.js"></script>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2>Mis valoraciones vs. Promedio Goodreads</h2>
-        <p class="chart-description">
-            Comparativa detallada entre mi valoración personal frente al promedio de los usuarios.
-        </p>
-        <div class="visual-container" style="display: block; height: auto;">
-            <iframe title="Diferencias de puntaje" id="datawrapper-chart-Keahc" src="https://datawrapper.dwcdn.net/Keahc/2/" scrolling="no" frameborder="0" style="width: 100% !important; border: none;" height="800"></iframe>
-            <script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
-        </div>
-    </section>
-
-    <footer>
-        <p><strong>Trabajo Práctico: Visualización de Datos Personales</strong></p>
-        <p>Agustina Hernandez Maczan | ECD.2025.A</p>
-        <p>Instituto Tecnológico de Buenos Aires (ITBA)</p>
-    </footer>
-</div>
-
+<h1>Tableau</h1>
+<div class='tableauPlaceholder' id='viz1773502730280' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ai&#47;AirbnbenBA&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='AirbnbenBA&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ai&#47;AirbnbenBA&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='es-ES' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1773502730280');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='900px';vizElement.style.height='927px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='900px';vizElement.style.height='927px';} else { vizElement.style.width='100%';vizElement.style.height='1027px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 </body>
 </html>
+
+
