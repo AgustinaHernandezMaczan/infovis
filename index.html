@@ -86,6 +86,7 @@
             font-size: 1rem;
         }
 
+        /* Contenedor Flex para centrar todo */
         .visual-container {
             width: 100%;
             min-height: 450px;
@@ -95,14 +96,21 @@
             background: #fafafa;
             border-radius: 4px;
             overflow: hidden;
+            padding: 20px 0;
         }
 
-        /* Forzar que los SVGs y objetos ocupen el ancho total */
-        .visual-container object, 
-        .visual-container iframe {
-            width: 100%;
+        /* Estilo específico para el SVG */
+        .visual-container object {
+            max-width: 90%; /* Evita que toque los bordes */
             height: auto;
-            min-height: 450px;
+            min-height: 400px;
+            margin: 0 auto; /* Refuerzo de centrado */
+            display: block;
+        }
+
+        /* Estilo para los IFRAMES (Datawrapper / Flourish) */
+        .visual-container iframe {
+            width: 100% !important;
             border: none;
         }
 
@@ -116,6 +124,12 @@
         }
 
         footer p { margin: 5px 0; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .container { padding: 30px 15px; }
+            section { padding: 20px; }
+        }
     </style>
 </head>
 <body>
@@ -156,7 +170,19 @@
         </p>
         <div class="visual-container" style="display: block; height: auto;">
             <iframe title="Diferencias de puntaje" id="datawrapper-chart-Keahc" src="https://datawrapper.dwcdn.net/Keahc/2/" scrolling="no" frameborder="0" style="width: 100% !important; border: none;" height="800"></iframe>
-            <script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>
+            <script type="text/javascript">
+                window.addEventListener("message", function(a) {
+                    if (void 0 !== a.data["datawrapper-height"]) {
+                        var e = document.querySelectorAll("iframe");
+                        for (var t in a.data["datawrapper-height"])
+                            for (var r, i = 0; r = e[i]; i++)
+                                if (r.contentWindow === a.source) {
+                                    var d = a.data["datawrapper-height"][t] + "px";
+                                    r.style.height = d
+                                }
+                    }
+                });
+            </script>
         </div>
     </section>
 
