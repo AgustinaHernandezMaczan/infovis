@@ -11,7 +11,7 @@
     
     <style>
         :root {
-            --bg-color: #f4f1ea; 
+            --bg-color: #f4f1ea; /* Fondo crema papel */
             --card-bg: #ffffff;
             --primary-text: #2c3e50;
             --accent-color: #8e44ad;
@@ -67,7 +67,7 @@
             padding: 40px;
             margin-bottom: 50px;
             border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             border: 1px solid var(--border-color);
         }
 
@@ -86,32 +86,30 @@
             font-size: 1rem;
         }
 
-        /* Contenedor Flex para centrar todo */
+        /* Contenedor sin fondo gris */
         .visual-container {
             width: 100%;
-            min-height: 450px;
+            min-height: 400px;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #fafafa;
+            background: transparent; /* Eliminado el fondo gris */
             border-radius: 4px;
             overflow: hidden;
-            padding: 20px 0;
+            padding: 10px 0;
         }
 
-        /* Estilo específico para el SVG */
         .visual-container object {
-            max-width: 90%; /* Evita que toque los bordes */
+            max-width: 100%;
             height: auto;
-            min-height: 400px;
-            margin: 0 auto; /* Refuerzo de centrado */
             display: block;
+            margin: 0 auto;
         }
 
-        /* Estilo para los IFRAMES (Datawrapper / Flourish) */
         .visual-container iframe {
             width: 100% !important;
             border: none;
+            background: transparent;
         }
 
         footer {
@@ -119,7 +117,8 @@
             padding: 60px 20px;
             font-size: 0.85rem;
             color: #777;
-            background: #ebe7de;
+            background: transparent; /* Footer más ligero */
+            border-top: 1px solid var(--border-color);
             margin-top: 40px;
         }
 
@@ -127,8 +126,7 @@
 
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; }
-            .container { padding: 30px 15px; }
-            section { padding: 20px; }
+            section { padding: 25px 15px; }
         }
     </style>
 </head>
