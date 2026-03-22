@@ -123,6 +123,17 @@
             min-height: 400px;
             background: transparent;
             padding: 10px 0;
+            /* Centrado de contenido */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        /* Estilo para que el SVG no se pegue a la izquierda */
+        .visual-container object {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
         }
 
         footer {
@@ -170,13 +181,15 @@
 
     <section>
         <h2>¿Cuáles son los géneros que más leo?</h2>
+        <p class="chart-description">Exploración inicial de la composición de mis lecturas según los géneros literarios.</p>
         <div class="visual-container">
-            <object data="categoria_genero_subgenero.svg" type="image/svg+xml" style="width: 100%;"></object>
+            <object data="categoria_genero_subgenero.svg" type="image/svg+xml"></object>
         </div>
     </section>
 
     <section>
         <h2>Evolución de páginas por trimestre</h2>
+        <p class="chart-description">Evolución temporal de las páginas leídas por categoría.</p>
         <div class="visual-container">
             <div class="flourish-embed flourish-chart" data-src="visualisation/28065791" style="width:100%">
                 <script src="https://public.flourish.studio/resources/embed.js"></script>
@@ -186,20 +199,33 @@
 
     <section>
         <h2>Mis valoraciones vs. Promedio Goodreads</h2>
-        <div class="visual-container">
+        <p class="chart-description">Comparativa detallada entre mi valoración personal frente al promedio de los usuarios.</p>
+        <div class="visual-container" style="display: block; height: auto;">
             <iframe title="Diferencias de puntaje" id="datawrapper-chart-Keahc" src="https://datawrapper.dwcdn.net/Keahc/2/" scrolling="no" frameborder="0" style="width: 100% !important; border: none;" height="800"></iframe>
+            <script type="text/javascript">
+                window.addEventListener("message", function(a) {
+                    if (void 0 !== a.data["datawrapper-height"]) {
+                        var e = document.querySelectorAll("iframe");
+                        for (var t in a.data["datawrapper-height"])
+                            for (var r, i = 0; r = e[i]; i++)
+                                if (r.contentWindow === a.source) {
+                                    var d = a.data["datawrapper-height"][t] + "px";
+                                    r.style.height = d
+                                }
+                    }
+                });
+            </script>
         </div>
     </section>
 
     <section>
         <h2>Exploración Profunda (Tableau)</h2>
-        <div class="visual-container">
+        <p class="chart-description">Navega por el mapa de autores y filtra por periodos temporales ajustados.</p>
+        <div class="visual-container" style="display: block; width: 100%;">
             <div class='tableauPlaceholder' id='viz1774184015965' style='position: relative; width: 100%;'>
                 <object class='tableauViz' style='display:none;'>
-                    <param name='name' value='TPLibros&#47;Dashboard1' />
                     <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                    <param name='embed_code_version' value='3' />
-                    <param name='site_root' value='' />
+                    <param name='name' value='TPLibros&#47;Dashboard1' />
                     <param name='toolbar' value='yes' />
                     <param name='animate_transition' value='yes' />
                     <param name='display_static_image' value='yes' />
@@ -231,22 +257,19 @@
 
 <script>
     const counters = document.querySelectorAll('.stat-number');
-    const duration = 2000; // 2 segundos para todos
+    const duration = 1000; // Sincronización a 1 segundo
 
     counters.forEach(counter => {
         const target = +counter.getAttribute('data-target');
         const startTime = performance.now();
         
-        // Lógica de inicio personalizada:
-        // Si el objetivo es el de páginas (24533), arranca en 15000.
-        // Para todos los demás, arranca en 1.
+        // Páginas arranca en 15.000, el resto arranca en 1.
         const startValue = (target === 24533) ? 15000 : 1;
 
         const updateCount = (currentTime) => {
             const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1); // 0 a 1
+            const progress = Math.min(elapsed / duration, 1);
 
-            // Interpolación lineal entre startValue y target
             const currentValue = Math.floor(progress * (target - startValue) + startValue);
             
             counter.innerText = currentValue.toLocaleString();
