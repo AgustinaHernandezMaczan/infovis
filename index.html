@@ -62,7 +62,6 @@
             text-transform: uppercase;
         }
 
-        /* --- ESTILOS DE LOS CONTADORES --- */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -95,7 +94,6 @@
             font-weight: 600;
         }
 
-        /* --- SECCIONES --- */
         section {
             background: var(--card-bg);
             padding: 40px;
@@ -125,11 +123,6 @@
             min-height: 400px;
             background: transparent;
             padding: 10px 0;
-        }
-
-        /* Ajuste para Tableau */
-        .tableauPlaceholder {
-            margin: 0 auto !important;
         }
 
         footer {
@@ -170,7 +163,7 @@
             <span class="stat-label">Autores</span>
         </div>
         <div class="stat-card">
-            <span class="stat-number" data-target="7">0</span>
+            <span class="stat-number" data-target="3">0</span>
             <span class="stat-label">Años</span>
         </div>
     </div>
@@ -242,7 +235,6 @@
             <script type='text/javascript'>
                 var divElement = document.getElementById('viz1774184015965');
                 var vizElement = divElement.getElementsByTagName('object')[0];
-                // Forzamos el ancho al 100% del contenedor padre para que no se corte
                 vizElement.style.width = '100%';
                 vizElement.style.height = (divElement.offsetWidth > 500) ? '777px' : '727px';
                 var scriptElement = document.createElement('script');
@@ -261,30 +253,32 @@
 
 <script>
     const counters = document.querySelectorAll('.stat-number');
-    const speed = 60; // Un poco más rápido para que no sea eterno
+    const duration = 2000; // Duración total de la animación en milisegundos (2 segundos)
 
     counters.forEach(counter => {
         const target = +counter.getAttribute('data-target');
-        let currentCount = 0;
+        const startTime = performance.now();
+        
+        // Ajuste inicial solo para el contador de páginas
+        const startValue = (target === 24533) ? 10000 : 0;
 
-        // Si es el de páginas, empezamos en 10.000
-        if (target === 24533) {
-            currentCount = 10000;
-        }
+        const updateCount = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1); // Va de 0 a 1
 
-        const updateCount = () => {
-            const step = (target - currentCount) / speed;
+            // Cálculo del valor actual basado en el progreso
+            const currentValue = Math.floor(progress * (target - startValue) + startValue);
             
-            if (currentCount < target) {
-                currentCount += step;
-                // Usamos Math.floor para no pasarnos y toLocaleString para el formato
-                counter.innerText = Math.floor(currentCount).toLocaleString();
-                setTimeout(updateCount, 20);
+            counter.innerText = currentValue.toLocaleString();
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCount);
             } else {
                 counter.innerText = target.toLocaleString();
             }
         };
-        updateCount();
+
+        requestAnimationFrame(updateCount);
     });
 </script>
 
