@@ -35,12 +35,12 @@
 
         header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin-bottom: 10px;
             color: #1a1a1a;
         }
@@ -48,13 +48,14 @@
         .subtitle {
             font-family: 'Playfair Display', serif;
             font-style: italic;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: #555;
-            margin-top: 0;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .author {
-            margin-top: 20px;
+            margin-top: 25px;
             font-weight: 600;
             letter-spacing: 2px;
             font-size: 0.85rem;
@@ -87,7 +88,7 @@
         }
 
         .stat-label {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #777;
@@ -96,7 +97,7 @@
 
         section {
             background: var(--card-bg);
-            padding: 40px;
+            padding: 45px;
             margin-bottom: 50px;
             border-radius: 8px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
@@ -105,35 +106,25 @@
 
         h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 1.9rem;
             margin-top: 0;
-            border-bottom: 2px solid var(--bg-color);
-            padding-bottom: 15px;
-            margin-bottom: 25px;
+            color: #1a1a1a;
+            line-height: 1.2;
         }
 
-        .chart-description {
+        .narrative-text {
+            font-size: 1.05rem;
+            color: #555;
             margin-bottom: 30px;
-            color: #666;
-            font-size: 1rem;
+            border-left: 3px solid var(--accent-color);
+            padding-left: 20px;
         }
 
         .visual-container {
             width: 100%;
-            min-height: 400px;
-            background: transparent;
-            padding: 10px 0;
-            /* Centrado de contenido */
             display: flex;
             justify-content: center;
             align-items: flex-start;
-        }
-
-        /* Estilo para que el SVG no se pegue a la izquierda */
-        .visual-container object {
-            display: block;
-            margin: 0 auto;
-            max-width: 100%;
         }
 
         footer {
@@ -142,12 +133,12 @@
             font-size: 0.85rem;
             color: #777;
             border-top: 1px solid var(--border-color);
-            margin-top: 40px;
         }
 
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; }
             .stats-grid { grid-template-columns: 1fr 1fr; }
+            section { padding: 25px; }
         }
     </style>
 </head>
@@ -156,7 +147,7 @@
 <div class="container">
     <header>
         <h1>Radiografía de mis hábitos de lectura</h1>
-        <p class="subtitle">Análisis visual de mis lecturas a lo largo de los últimos años</p>
+        <p class="subtitle">Un análisis visual de mis lecturas a lo largo de los últimos años.</p>
         <p class="author">Agustina Hernandez Maczan</p>
     </header>
 
@@ -167,27 +158,33 @@
         </div>
         <div class="stat-card">
             <span class="stat-number" data-target="74">0</span>
-            <span class="stat-label">Libros</span>
+            <span class="stat-label">Libros finalizados</span>
         </div>
         <div class="stat-card">
             <span class="stat-number" data-target="66">0</span>
-            <span class="stat-label">Autores</span>
+            <span class="stat-label">Autores explorados</span>
         </div>
         <div class="stat-card">
             <span class="stat-number" data-target="3">0</span>
-            <span class="stat-label">Años</span>
+            <span class="stat-label">Años de registro</span>
         </div>
     </div>
 
     <section>
-        <h2>¿Cuáles son los géneros que más leo?</h2>
+        <h2>¿Cuáles son los géneros y subgéneros que definen mis lecturas?</h2>
+        <p class="narrative-text">
+            Mi biblioteca es un territorio diverso. Desde la ficción que me permite escapar de la rutina hasta los ensayos que me ayudan a entender el entorno, aquí se despliega el peso visual de cada temática en mi historial.
+        </p>
         <div class="visual-container">
-            <object data="categoria_genero_subgenero.svg" type="image/svg+xml"></object>
+            <object data="categoria_genero_subgenero.svg" type="image/svg+xml" style="width: 100%;"></object>
         </div>
     </section>
 
     <section>
-        <h2>¿Hay algún momento del año en donde leo más?</h2>
+        <h2>¿Hay algún momento del año en donde leo más páginas?</h2>
+        <p class="narrative-text">
+            La lectura no siempre es constante; fluctúa según las estaciones y mis tiempos personales. Al analizar la evolución por trimestre, puedo identificar los periodos de mayor intensidad y cómo mis intereses variaron con el tiempo.
+        </p>
         <div class="visual-container">
             <div class="flourish-embed flourish-chart" data-src="visualisation/28065791" style="width:100%">
                 <script src="https://public.flourish.studio/resources/embed.js"></script>
@@ -196,39 +193,26 @@
     </section>
 
     <section>
-        <h2>¿Cómo se comparan mis valoraciones contra el promedio de Goodreads?</h2>
-        <div class="visual-container" style="display: block; height: auto;">
-                <iframe title="Diferencias entre el puntaje  promedio y el  propio" aria-label="Range Plot" id="datawrapper-chart-Keahc" src="https://datawrapper.dwcdn.net/Keahc/3/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1445" data-external="1"></iframe><script type="text/javascript">window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}});</script>            <script type="text/javascript">
-                window.addEventListener("message", function(a) {
-                    if (void 0 !== a.data["datawrapper-height"]) {
-                        var e = document.querySelectorAll("iframe");
-                        for (var t in a.data["datawrapper-height"])
-                            for (var r, i = 0; r = e[i]; i++)
-                                if (r.contentWindow === a.source) {
-                                    var d = a.data["datawrapper-height"][t] + "px";
-                                    r.style.height = d
-                                }
-                    }
-                });
-            </script>
+        <h2>¿Cómo se comparan mis valoraciones personales contra el promedio de Goodreads?</h2>
+        <p class="narrative-text">
+            La lectura es, ante todo, una experiencia subjetiva. En esta comparativa enfrento mis puntajes contra la opinión global de la comunidad, revelando dónde mis gustos coinciden con el consenso y dónde se apartan radicalmente.
+        </p>
+        <div class="visual-container" style="display: block;">
+            <iframe title="Diferencias de puntaje" id="datawrapper-chart-Keahc" src="https://datawrapper.dwcdn.net/Keahc/3/" scrolling="no" frameborder="0" style="width: 100% !important; border: none;" height="800"></iframe>
         </div>
     </section>
 
     <section>
-        <h2>¿Cómo se distribuye mi biblioteca por autor?</h2>
-        <div class="visual-container" style="display: block; width: 100%;">
+        <h2>¿Cómo se distribuye mi biblioteca según cada autor?</h2>
+        <p class="narrative-text">
+            Finalmente, llegamos a los arquitectos de estas páginas. Esta visualización permite navegar por los nombres que más se repiten en mi historial y entender la relevancia de cada voz en mi colección personal.
+        </p>
+        <div class="visual-container" style="display: block;">
             <div class='tableauPlaceholder' id='viz1774184015965' style='position: relative; width: 100%;'>
                 <object class='tableauViz' style='display:none;'>
                     <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
                     <param name='name' value='TPLibros&#47;Dashboard1' />
-                    <param name='toolbar' value='yes' />
-                    <param name='animate_transition' value='yes' />
-                    <param name='display_static_image' value='yes' />
-                    <param name='display_spinner' value='yes' />
-                    <param name='display_overlay' value='yes' />
-                    <param name='display_count' value='yes' />
                     <param name='language' value='es-ES' />
-                    <param name='filter' value='publish=yes' />
                 </object>
             </div>
             <script type='text/javascript'>
@@ -243,6 +227,14 @@
         </div>
     </section>
 
+    <section style="background: var(--accent-color); color: white; border: none; text-align: center;">
+        <h2 style="color: white; border: none; margin-bottom: 10px;">¿Qué tan alta es mi montaña de libros?</h2>
+        <p style="font-size: 1.25rem; font-family: 'Playfair Display', serif; font-style: italic; opacity: 0.95; max-width: 800px; margin: 0 auto; line-height: 1.4;">
+            "Si apiláramos las 24.533 páginas leídas, formaríamos una torre de <strong>2,5 metros de altura</strong>. 
+            Es, literalmente, como ir desde el piso hasta el techo de este aula."
+        </p>
+    </section>
+    
     <footer>
         <p><strong>Trabajo Práctico: Visualización de Datos Personales</strong></p>
         <p>Agustina Hernandez Maczan | ECD.2025.A</p>
@@ -252,30 +244,21 @@
 
 <script>
     const counters = document.querySelectorAll('.stat-number');
-    const duration = 1000; // Sincronización a 1 segundo
+    const duration = 1000;
 
     counters.forEach(counter => {
         const target = +counter.getAttribute('data-target');
         const startTime = performance.now();
-        
-        // Páginas arranca en 15.000, el resto arranca en 1.
         const startValue = (target === 24533) ? 15000 : 1;
 
         const updateCount = (currentTime) => {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
-
             const currentValue = Math.floor(progress * (target - startValue) + startValue);
-            
             counter.innerText = currentValue.toLocaleString();
-
-            if (progress < 1) {
-                requestAnimationFrame(updateCount);
-            } else {
-                counter.innerText = target.toLocaleString();
-            }
+            if (progress < 1) requestAnimationFrame(updateCount);
+            else counter.innerText = target.toLocaleString();
         };
-
         requestAnimationFrame(updateCount);
     });
 </script>
